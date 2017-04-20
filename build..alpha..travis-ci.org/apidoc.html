@@ -81,15 +81,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.pbkdf2.precondition">
-            function <span class="apidocSignatureSpan">pbkdf2.</span>precondition
-            <span class="apidocSignatureSpan">(iterations, keylen)</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">pbkdf2.</span>browser</span>
 
         </li>
@@ -112,45 +103,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.pbkdf2.browser.pbkdf2Sync">
             function <span class="apidocSignatureSpan">pbkdf2.browser.</span>pbkdf2Sync
             <span class="apidocSignatureSpan">(password, salt, iterations, keylen, digest)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.pbkdf2.pbkdf2">module pbkdf2.pbkdf2</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pbkdf2.pbkdf2.pbkdf2">
-            function <span class="apidocSignatureSpan">pbkdf2.</span>pbkdf2
-            <span class="apidocSignatureSpan">(password, salt, iterations, keylen, digest, callback)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.pbkdf2.pbkdf2Sync">module pbkdf2.pbkdf2Sync</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pbkdf2.pbkdf2Sync.pbkdf2Sync">
-            function <span class="apidocSignatureSpan">pbkdf2.</span>pbkdf2Sync
-            <span class="apidocSignatureSpan">(password, salt, iterations, keylen, digest)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.pbkdf2.precondition">module pbkdf2.precondition</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pbkdf2.precondition.precondition">
-            function <span class="apidocSignatureSpan">pbkdf2.</span>precondition
-            <span class="apidocSignatureSpan">(iterations, keylen)</span>
             </a>
 
         </li>
@@ -219,35 +171,6 @@ var derivedKey = pbkdf2.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(&#
 For more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback
 ).
 ...</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.pbkdf2.precondition" id="apidoc.element.pbkdf2.precondition">
-        function <span class="apidocSignatureSpan">pbkdf2.</span>precondition
-        <span class="apidocSignatureSpan">(iterations, keylen)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">precondition = function (iterations, keylen) {
-  if (typeof iterations !== &#x27;number&#x27;) {
-    throw new TypeError(&#x27;Iterations not a number&#x27;)
-  }
-
-  if (iterations &#x3c; 0) {
-    throw new TypeError(&#x27;Bad iterations&#x27;)
-  }
-
-  if (typeof keylen !== &#x27;number&#x27;) {
-    throw new TypeError(&#x27;Key length not a number&#x27;)
-  }
-
-  if (keylen &#x3c; 0 || keylen &#x3e; MAX_ALLOC || keylen !== keylen) {<span class="apidocCodeCommentSpan"> /* eslint no-self-compare: 0 */
-</span>    throw new TypeError(&#x27;Bad key length&#x27;)
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -351,110 +274,6 @@ var derivedKey = pbkdf2.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(&#
 For more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback
 ).
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.pbkdf2.pbkdf2" id="apidoc.module.pbkdf2.pbkdf2">module pbkdf2.pbkdf2</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.pbkdf2.pbkdf2.pbkdf2" id="apidoc.element.pbkdf2.pbkdf2.pbkdf2">
-        function <span class="apidocSignatureSpan">pbkdf2.</span>pbkdf2
-        <span class="apidocSignatureSpan">(password, salt, iterations, keylen, digest, callback)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">pbkdf2 = function (password, salt, iterations, keylen, digest, callback) {
-  if (typeof digest === &#x27;function&#x27;) {
-    callback = digest;
-    digest = undefined;
-    pbkdf2DeprecationWarning();
-  }
-
-  if (typeof callback !== &#x27;function&#x27;)
-    throw new Error(&#x27;No callback provided to pbkdf2&#x27;);
-
-  return pbkdf2(password, salt, iterations, keylen, digest, callback);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.pbkdf2.pbkdf2Sync" id="apidoc.module.pbkdf2.pbkdf2Sync">module pbkdf2.pbkdf2Sync</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.pbkdf2.pbkdf2Sync.pbkdf2Sync" id="apidoc.element.pbkdf2.pbkdf2Sync.pbkdf2Sync">
-        function <span class="apidocSignatureSpan">pbkdf2.</span>pbkdf2Sync
-        <span class="apidocSignatureSpan">(password, salt, iterations, keylen, digest)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">pbkdf2Sync = function (password, salt, iterations, keylen, digest) {
-  if (typeof digest === &#x27;undefined&#x27;) {
-    digest = undefined;
-    pbkdf2DeprecationWarning();
-  }
-  return pbkdf2(password, salt, iterations, keylen, digest);
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from `crypto.
-getHashes()`
-
-
-## Usage
-
-```js
-var pbkdf2 = require(&#x27;pbkdf2&#x27;)
-var derivedKey = pbkdf2.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(&#x27;password&#x27;, &#x27;salt&#x27;, 1, 32, &#x27
-;sha512&#x27;)
-
-...
-```
-
-For more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback
-).
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.pbkdf2.precondition" id="apidoc.module.pbkdf2.precondition">module pbkdf2.precondition</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.pbkdf2.precondition.precondition" id="apidoc.element.pbkdf2.precondition.precondition">
-        function <span class="apidocSignatureSpan">pbkdf2.</span>precondition
-        <span class="apidocSignatureSpan">(iterations, keylen)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">precondition = function (iterations, keylen) {
-  if (typeof iterations !== &#x27;number&#x27;) {
-    throw new TypeError(&#x27;Iterations not a number&#x27;)
-  }
-
-  if (iterations &#x3c; 0) {
-    throw new TypeError(&#x27;Bad iterations&#x27;)
-  }
-
-  if (typeof keylen !== &#x27;number&#x27;) {
-    throw new TypeError(&#x27;Key length not a number&#x27;)
-  }
-
-  if (keylen &#x3c; 0 || keylen &#x3e; MAX_ALLOC || keylen !== keylen) {<span class="apidocCodeCommentSpan"> /* eslint no-self-compare: 0 */
-</span>    throw new TypeError(&#x27;Bad key length&#x27;)
-  }
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
