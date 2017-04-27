@@ -154,22 +154,21 @@
   return pbkdf2(password, salt, iterations, keylen, digest);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from `crypto.
-getHashes()`
+    digest = undefined
+  }
 
+  checkParameters(iterations, keylen)
+  if (typeof callback !== &#x27;function&#x27;) throw new Error(&#x27;No callback provided to pbkdf2&#x27;)
 
-## Usage
+  setTimeout(function () {
+    callback(null, exports.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(password, salt, iterations, keylen, digest))
+  })
+}
 
-```js
-var pbkdf2 = require(&#x27;pbkdf2&#x27;)
-var derivedKey = pbkdf2.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(&#x27;password&#x27;, &#x27;salt&#x27;, 1, 32, &#x27
-;sha512&#x27;)
-
-...
-```
-
-For more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback
-).
+var defaultEncoding
+if (process.browser) {
+  defaultEncoding = &#x27;utf-8&#x27;
+} else {
 ...</pre></li>
     </ul>
 
@@ -257,22 +256,21 @@ For more information on the API,  please see the relevant [Node documentation](h
   return DK
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-This library provides the functionality of PBKDF2 with the ability to use any supported hashing algorithm returned from `crypto.
-getHashes()`
+    digest = undefined
+  }
 
+  checkParameters(iterations, keylen)
+  if (typeof callback !== &#x27;function&#x27;) throw new Error(&#x27;No callback provided to pbkdf2&#x27;)
 
-## Usage
+  setTimeout(function () {
+    callback(null, exports.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(password, salt, iterations, keylen, digest))
+  })
+}
 
-```js
-var pbkdf2 = require(&#x27;pbkdf2&#x27;)
-var derivedKey = pbkdf2.<span class="apidocCodeKeywordSpan">pbkdf2Sync</span>(&#x27;password&#x27;, &#x27;salt&#x27;, 1, 32, &#x27
-;sha512&#x27;)
-
-...
-```
-
-For more information on the API,  please see the relevant [Node documentation](https://nodejs.org/api/crypto.html#crypto_crypto_pbkdf2_password_salt_iterations_keylen_digest_callback
-).
+var defaultEncoding
+if (process.browser) {
+  defaultEncoding = &#x27;utf-8&#x27;
+} else {
 ...</pre></li>
     </ul>
 
